@@ -14,7 +14,7 @@ import jwt
 app = Flask(__name__)
 # ! Route pour la bdd (A MODIFIER)
 app.config["SQLALCHEMY_DATABASE_URI"] = (
-    "sqlite:////home/ubuntu/thoth-edu/database/data.db"
+    "sqlite:////var/www/thoth-edu.fr-database/data.db"
 )
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 CORS(
@@ -25,7 +25,7 @@ CORS(
 )
 db = SQLAlchemy(app)
 # Setup for tokens
-secret = "YofkxbEsdL"
+secret = "YofkxbEsdL" # TEMPORARY, TO CHANGE ABSOLUTELY
 # Pour le hashing
 bcrypt = Bcrypt(app)
 
